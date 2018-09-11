@@ -6,6 +6,7 @@
 #todoInput {
 	width: 100%;
 	height: 60px;
+	box-sizing: border-box;
 	background: none;
 	border: none;
 	border-bottom: 1px solid #34495e;
