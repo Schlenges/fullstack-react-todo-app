@@ -98,7 +98,7 @@ class TodoList extends Component {
       headers: new Headers({
         'Content-Type': 'application/json'
       }),
-      body: JSON.stringify({completed: todo.completed})
+      body: JSON.stringify({completed: !todo.completed})
     })
     .then(response => {
       if(!response.ok){
@@ -115,11 +115,11 @@ class TodoList extends Component {
       return response.json();
     })
     .then(updatedTodo => {
-      let updatedTodos = this.state.todos.map(todo => 
-        (todo._id === updatedTodo._id) ? {...todo, completed: !todo.completed} : todo
+      let todos = this.state.todos.map(t => 
+        (t._id === updatedTodo._id) ? {...t, completed: !t.completed} : t
       );
 
-      this.setState({todos: updatedTodos});
+      this.setState({todos: todos});
     });
   }
 
@@ -140,7 +140,7 @@ class TodoList extends Component {
           <h2>A simple todo list app built with react and node</h2>
         </header>
         <TodoForm addTodo={this.addTodo}/>
-        <ul class="list">
+        <ul className="list">
           {todos}
         </ul>
       </div>

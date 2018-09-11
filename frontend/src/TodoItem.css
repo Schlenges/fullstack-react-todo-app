@@ -22,13 +22,13 @@
 	color: #bdc3c7;
 }
 
-#delete {
+.delete {
   float: right;
   color: #c0392b;
   transition: all 0.3s;
   opacity: 0;
 }
 
-#delete:hover {
+.delete:hover {
   color: #e74c3c
 }
