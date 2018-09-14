@@ -13,7 +13,7 @@ exports.getTodos = (req, res) => {
 exports.createTodo = (req, res) => {
   db.Todo.create(req.body)
     .then((newTodo) => {
-      res.status(201).json(newTodo); // status 201 vor "created"
+      res.status(201).json(newTodo); // status 201 for "created"
     })
     .catch((err) => {
       res.send(err);
